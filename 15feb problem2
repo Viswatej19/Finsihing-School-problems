@@ -1,0 +1,71 @@
+/*
+Write a program to read two strings from the user and check if they are isomorphic.
+
+Two strings are isomorphic if the characters in 's' can be replaced to get 't'.
+
+All occurrences of a character must be replaced with another character while preserving the order of characters.
+No two characters may map to the same character but a character may map to itself.
+
+
+Note:
+You may assume both s and t have the same length and all inputs are lower case alphabets(a-z)
+
+input = 
+egg
+app
+output = true
+
+input = 
+foo
+bar
+output = false
+
+input = 
+papel
+title
+output = true
+
+
+*/
+import java.util.*;
+class prog2
+{
+	public static boolean isomorphic(String s1, String s2)
+	{
+		if (s1.length() != s2.length())
+			return false;
+		Map<Character, Character> map = new HashMap<>();
+		Set<Character> set = new HashSet<>();
+		for (int i = 0; i < s1.length(); i++)
+		{
+			char c1 = s1.charAt(i);
+			char c2 = s2.charAt(i);
+			if (map.containsKey(c1))
+			{
+				if (map.get(c1) != c2)
+					return false;
+			}
+			else
+			{
+				if (set.contains(c2))
+					return false;
+	   			map.put(c1, c2);
+				set.add(c2);
+			}
+		}
+		return true;
+	}
+	public static void main(String[] args)
+	{
+	    Scanner sc = new Scanner(System.in);
+		String s1 = sc.next();
+		String s2 = sc.next();
+
+		if (isomorphic(s1,s2)) {
+			System.out.print("true");
+		}
+		else {
+			System.out.print("false");
+		}
+	}
+}
