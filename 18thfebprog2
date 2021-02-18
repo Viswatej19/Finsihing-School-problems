@@ -1,0 +1,43 @@
+/*
+Rohan is a  milk vendor.
+He has only two aluminimum tins of capacity m and n litres..
+Using these 2 aluminimum tins only, he can measure
+He has to supply exactly P litres of milk to Sohan.
+
+To measure the milk, following conditions should be followed 
+	- Fill one of the tins completely with milk.
+	- Empty the other tin.
+	- Pour milk from one tin into another tin till it fills completely,
+	 or the first tin itself is empty.
+	 
+Such that, at the end one or both tins contains P litres of the milk.
+	
+Please help Rohan, to check whether P litres of milk can be measured
+using the two tins or not.
+
+Input Format:
+-------------
+3 space separated integers, m, n and P.
+
+Output Format:
+--------------
+Print a boolean value.
+
+
+Sample Input-1:
+---------------
+3 5 4
+
+Sample Output-1:
+----------------
+true
+
+
+Sample Input-2:
+---------------
+2 4 5
+
+Sample Output-2:
+----------------
+false
+*/
