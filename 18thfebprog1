@@ -1,0 +1,60 @@
+/*
+Given a pattern and a string str, find if str follows the same pattern.
+
+Here follow means a full match, such that there is a bijection between a letter in pattern and a non-empty word in str.
+
+if str follows the same pattern print true else false
+
+input =dog cat cat dog
+abba
+output = true
+
+input =dog cat cat fish
+abba
+output = false
+
+input =dog cat cat dog
+aaaa
+output = false
+
+input =dog dog dog dog
+abba
+output = false
+
+Notes
+You may assume pattern contains only lowercase letters, and str contains lowercase letters that may be separated by a single space.
+*/
+
+import java.util.*;
+class prog1
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        String str[]=sc.nextLine().split(" ");
+        char ch[]=sc.next().toCharArray();
+        HashMap <Character,String> hm=new HashMap <Character,String>();
+        HashMap <String,Character> hm1=new HashMap <String,Character>();
+        boolean flag=true;
+        for(int i=0;i<ch.length;i++)
+        {
+            if(hm.containsKey(ch[i]) && hm1.containsKey(str[i]))
+            {
+                if((hm.get(ch[i]).equals(str[i])) && ((char)hm1.get(str[i])==ch[i]))
+                {
+                    continue;
+                }else
+                {
+                    flag=false;
+                    break;
+                }
+            }
+            else
+            {
+                hm.put(ch[i],str[i]);
+                hm1.put(str[i],ch[i]);
+            }
+        }
+        System.out.println(flag);
+}
+}
