@@ -78,3 +78,24 @@ class q1{
         System.out.println(count);
     }
 }
+SECOND METHOD
+import java.util.*;
+class test
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+        HashMap <Character,Integer> hm = new HashMap <>();
+        hm.put('p',0);
+        hm.put('c',0);
+        hm.put('m',0);
+        hm.put('b',0);
+        hm.put('z',0);
+        for(int i=0;i<str.length();i++)
+        {
+            hm.put(str.charAt(i),hm.get(str.charAt(i))+1);
+        }
+        System.out.println(Collections.min(hm.values()));
+    }
+}
